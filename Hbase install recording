@@ -1,0 +1,8 @@
+步骤:
+	1.修改配置文件下hbase-env.sh，导出JAVA_HOME;
+	2.修改配置文件下habse-site.xml，添加hbase.rootdir;
+	3.启动
+说明:
+	1.hbase.rootdir设置为本地目录，启动时，在hbase-1.0.0中无法创建hbase.rootdir，在hbase-0.94.27中能创建hbase.rootdir，但一段时间后HMaster自动	停止，停止原因:拒绝连接，可能/etc/hosts没配置好；
+	2.hbase.rootdir设置为hdfs目录，导入使用的hadoop-core jar包到hbase lib目录下,启动HDFS，再启动hbase即可；
+	3.hbase HMaster WEB地址:localhost:60010;
